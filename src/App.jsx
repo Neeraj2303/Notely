@@ -16,7 +16,7 @@ function App() {
 
 
   const fetchNotes = async () => {
-    const res = await axios.get('http://localhost:5000/api/notes');
+    const res = await axios.get('https://notely-yfat.onrender.com/api/notes');
     setNotes(res.data);
   };
 
@@ -36,7 +36,7 @@ function App() {
 
   const addNote = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/notes', {
+      const res = await axios.post('https://notely-yfat.onrender.com/api/notes', {
         title: newTitle,
         content: newContent,
       });
@@ -51,13 +51,13 @@ function App() {
   };
 
   const deleteNote = async (id) => {
-    await axios.delete(`http://localhost:5000/api/notes/${id}`);
+    await axios.delete(`https://notely-yfat.onrender.com/api/notes/${noteID}`);
     setNotes(notes.filter((n) => n._id !== id));
   };
 
   const updateNote = async () => {
     try{
-      const res = await axios.put(`http://localhost:5000/api/notes/${editing._id}`, {
+      const res = await axios.put(`https://notely-yfat.onrender.com/api/notes/${noteID}`, {
         title: newTitle,
         content: newContent,
       });
