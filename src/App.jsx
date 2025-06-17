@@ -51,13 +51,13 @@ function App() {
   };
 
   const deleteNote = async (id) => {
-    await axios.delete(`https://notely-yfat.onrender.com/api/notes/${noteID}`);
+    await axios.delete(`https://notely-yfat.onrender.com/api/notes/${id}`);
     setNotes(notes.filter((n) => n._id !== id));
   };
 
   const updateNote = async () => {
     try{
-      const res = await axios.put(`https://notely-yfat.onrender.com/api/notes/${noteID}`, {
+      const res = await axios.put(`https://notely-yfat.onrender.com/api/notes/${editing._id}`, {
         title: newTitle,
         content: newContent,
       });
